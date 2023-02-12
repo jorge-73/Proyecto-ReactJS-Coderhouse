@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Motorola Edge 30",
+    "description": "Motorola Edge 30 Fusion 5G con control remoto",
+    "price": 169999,
+    "pictureUrl": "https://armoto.vtexassets.com/arquivos/ids/162451-800-auto?v=638096964733030000&width=800&height=auto&aspect=true",
+    "category": "celulares"
+  },
+  {
+    "id": 2,
+    "title": "Smart TV Samsung",
+    "description": "Smart TV LED 50 Samsung 50AU7000 4K",
+    "price": 129999,
+    "pictureUrl": "https://tienda.personal.com.ar/images/Specs50_AU_7000_min_29e772d07a.png",
+    "category": "smartTv"
+  },
+  {
+    "id": 3,
+    "title": "Smart Watch Xiaomi",
+    "description": "Smartwatch Xiaomi Amazfit GTR2 Aluminum Alloy Negro",
+    "price": 54599,
+    "pictureUrl": "https://correoargentino.vtexassets.com/arquivos/ids/209447/image-d047faa4f6f6498ba7a3bd2960977e25.jpg?v=637959234235270000",
+    "category": "smartWatch"
+  },
+  {
+    "id": 4,
+    "title": "Minicomponente Sony",
+    "description": "Minicomponente Sony MHC-V02 negro con bluetooth - 120V/240V",
+    "price": 94999,
+    "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_845710-MLA49775390505_042022-O.webp",
+    "category": "minicomponentes"
+  },
+  {
+    "id": 5,
+    "title": "Auriculares JBL",
+    "description": "Auriculares in-ear inalámbricos JBL Wave 100TWS black",
+    "price": 14999,
+    "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_891110-MLA47919581798_102021-O.jpg",
+    "category": "auriculares"
+  },
+  {
+    "id": 6,
+    "title": "Samsung Galaxy S23",
+    "description": "Samsung Galaxy S23 8gb 128gb Phantom Black + Evoucher, cámaras traseras de 50Mpx/10Mpx/12Mpx, Cámaras delanteras de 12Mpx",
+    "price": 319999,
+    "pictureUrl": "https://coppelar.vtexassets.com/arquivos/ids/1753782/S23.jpg?v=638110511091330000",
+    "category": "celulares"
+  },
+  {
+    "id": 7,
+    "title": "Smart Tv Noblex Qled 4k 55",
+    "description": "Smart Tv Noblex Dq55x9500pi Qled 4k 55'' Black Series Con Google Tv. Dimensiones: 123cm de ancho, 71.4cm de alto, 7.7cm de profundidad",
+    "price": 148999,
+    "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_944296-MLA51990886803_102022-O.webp",
+    "category": "smartTv"
+  },
+  {
+    "id": 8,
+    "title": "Apple Watch Series 7",
+    "description": "Apple Watch Series 7 (GPS, 45mm) - Caja de aluminio color azul - Correa deportiva azul abismo",
+    "price": 219000,
+    "pictureUrl": "https://edropcr.com/wp-content/uploads/2022/03/Apple-Watch-Series-7-GPS-45-mm-Azul-1.jpg",
+    "category": "smartWatch"
+  },
+  {
+    "id": 9,
+    "title": "Minicomponente Panasonic",
+    "description": "Minicomponente Panasonic SC-UA70 negro con bluetooth 1700W de potencia - 220V - 240V",
+    "price": 410500,
+    "pictureUrl": "https://www.panasonic.com/content/dam/pim/pa/es/SC/SC-UA7/SC-UA70PU/SC-UA70PU-Product_ImageGlobal-1_pa_es.png",
+    "category": "minicomponentes"
+  },
+  {
+    "id": 10,
+    "title": "Apple AirPods Max",
+    "description": "Apple AirPods Max Azul. Controlador dinámico diseñado por Apple para un sonido de alta fidelidad. Cancelación Activa de Ruido que bloquea el ruido exterior para que puedas sumergirte por completo en lo que estás escuchando. etc..",
+    "price": 220000,
+    "pictureUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/414/148/products/2-apple-airpods-max-azul1-056e6226f24f52366416638557132124-640-0.jpg",
+    "category": "auriculares"
+  },
+  {
+    "id": 11,
+    "title": "Xiaomi Pocophone Poco M4",
+    "description": "Xiaomi Pocophone Poco M4 Pro Dual SIM 128 GB power black 6 GB RAM",
+    "price": 160000,
+    "pictureUrl": "https://mistoremx.oss-us-east-1.aliyuncs.com/data/gallery_album/202/original_img/1646200078559170386.webp",
+    "category": "celulares"
+  },
+  {
+    "id": 12,
+    "title": "Smart TV LG LED 4K 55'",
+    "description": "Smart TV LG AI ThinQ 55NANO80SPA LED 4K 55' 100V/240V. Tecnología HDR para una calidad de imagen mejorada.Modo de sonido: Ultra Surround, AI Sound, AI Acoustic Tuning, LG Sound Sync, Dolby Digital, Sound Alive, Sound Mode Sync, Sound Share, Clear Voice, AI Sound Pro. Tiene función Screen Share.",
+    "price": 148999,
+    "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_603156-MLA48008165452_102021-O.jpg",
+    "category": "smartTv"
+  }
+]
