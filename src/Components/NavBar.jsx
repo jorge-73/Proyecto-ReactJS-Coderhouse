@@ -1,15 +1,25 @@
-import shopLogo from '../assets/shop-logo.png' 
+import shopLogo from "../assets/shop-logo.png";
 import { CartWidget } from "./CartWidget";
 import "../StylesSheets/NavBar.css";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../Contexts/CartContext";
 
 export function NavBar(background) {
+
+  const { mostrarNavbar } = useContext(CartContext);
+
   return (
     <header className={`header bg-${background}`}>
-      <nav className="navbar navbar-expand-lg fw-bold">
+      <nav className={`navbar navbar-expand-lg fw-bold ${mostrarNavbar ? '' : 'd-none'}`}>
         <div className="container-fluid">
           <NavLink className="navbar-brand" aria-current="page" to="/">
-            <img className='img-fluid' style={{ width: "6em"}} src={shopLogo} alt="Shop Logo" />
+            <img
+              className="img-fluid"
+              style={{ width: "6em" }}
+              src={shopLogo}
+              alt="Shop Logo"
+            />HOME
           </NavLink>
           <button
             className="navbar-toggler"
@@ -24,56 +34,30 @@ export function NavBar(background) {
           </button>
           <div className="collapse navbar-collapse" id="navbarS">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item"></li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle fw-bold"
-                  href="/"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Categorías
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <NavLink
-                      className="dropdown-item fw-bold"
-                      to={"/category/celulares"}
-                    >
-                      Celulares
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="dropdown-item fw-bold" to={"/category/smartTv"}>
-                      Smart TV
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className="dropdown-item fw-bold"
-                      to={"/category/smartWatch"}
-                    >
-                      Smart Watch
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className="dropdown-item fw-bold"
-                      to={"/category/minicomponentes"}
-                    >
-                      Minicomponentes
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      className="dropdown-item fw-bold"
-                      to={"/category/auriculares"}
-                    >
-                      Auriculares
-                    </NavLink>
-                  </li>
-                </ul>
+              <li className="nav-item fw-bold">
+                <NavLink className="nav-link btn btn-outline-info mx-1" to={"/category/celulares"}>
+                  Celulares
+                </NavLink>
+              </li>
+              <li className="nav-item fw-bold">
+                <NavLink className="nav-link btn btn-outline-info mx-1" to={"/category/smartTv"}>
+                  Smart TV
+                </NavLink>
+              </li>
+              <li className="nav-item fw-bold">
+                <NavLink className="nav-link btn btn-outline-info mx-1" to={"/category/smartWatch"}>
+                  Smart Watch
+                </NavLink>
+              </li>
+              <li className="nav-item fw-bold">
+                <NavLink className="nav-link btn btn-outline-info mx-1" to={"/category/minicomponentes"}>
+                  Minicomponentes
+                </NavLink>
+              </li>
+              <li className="nav-item fw-bold">
+                <NavLink className="nav-link btn btn-outline-info mx-1 mb-sm-1" to={"/category/auriculares"}>
+                  Auriculares
+                </NavLink>
               </li>
             </ul>
             <div className="cartWidget">

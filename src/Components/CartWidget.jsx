@@ -1,16 +1,21 @@
-import React from 'react'
+import { useContext } from 'react';
+import { CartContext } from '../Contexts/CartContext';
 import '../StylesSheets/CartWidget.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { CartContainer } from './CartContainer/CartContainer';
 
 
 export function CartWidget() {
+
+  const {getTotalProducts} = useContext(CartContext);
+
   return (
     <>
     <button type="button" className="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ec-Modal">
       <FontAwesomeIcon icon={faShoppingCart} />
     </button>
-    <sup className='numHardCodeado'>0</sup>
+    <sup className='numHardCodeado'>{getTotalProducts()}</sup>
 
     <div className="modal fade" id="ec-Modal" aria-labelledby="eMl" aria-hidden="true">
       <div className="modal-dialog modal-xl">
@@ -20,11 +25,10 @@ export function CartWidget() {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body bg-light text-center">
-            <h4>Productos agregados al carrito</h4>
+            <CartContainer />
           </div>
           <div className="modal-footer">
             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" className="btn btn-success">Comprar</button>
           </div>
         </div>
       </div>

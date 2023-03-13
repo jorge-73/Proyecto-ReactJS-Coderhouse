@@ -1,24 +1,23 @@
 import { ItemDetail } from "./ItemDetail";
-import productos from "../../api/productos.json";
+
 import { useParams } from "react-router-dom";
+
+import { DataBaseContext } from "../../Contexts/DataBaseProvider";
+import { useContext } from "react";
 
 export const ItemDetailContainer = () => {
 
+  const {productsDb} = useContext(DataBaseContext);
+
   let { id } = useParams()
   
-  const product = productos.find((prod) => prod.id === parseInt(id));
+  const product = productsDb.find((prod) => prod.id === parseInt(id));
 
   return (
     <div className="container text-center">
       <h2>Detalle del Producto</h2>
       <div className="d-flex justify-content-center align-items-center">
-        <ItemDetail 
-          id={product.id}
-          description={product.description}
-          price={product.price}
-          image={product.pictureUrl}
-          title={product.title}
-          category={product.category} />
+        <ItemDetail item={product} />
       </div>
     </div>
   )

@@ -1,41 +1,49 @@
 import { ItemList } from "./ItemList";
 import { useParams } from "react-router-dom";
-import productos from "../../api/productos.json";
+
+import { DataBaseContext } from "../../Contexts/DataBaseProvider";
+import { useContext } from "react";
+
 import { useState, useEffect } from "react";
 
 export function ItemListContainer({ greeting }) {
+
+  const {productsDb} = useContext(DataBaseContext);
+
   const [prod, setProd] = useState([]);
   const [productWait, setProductWait] = useState(false);
 
   const { Category } = useParams();
 
-  const promesa = new Promise((res, reject) => {
-    setTimeout(() => {
-      res(productos);
-    }, 2000);
-  });
-
   useEffect(() => {
+
+    const promesa = new Promise((res, reject) => {
+      setTimeout(() => {
+        res(productsDb);
+      }, 2000);
+    });
+
     setProd([]);
 
-    promesa.then((result) => {
+    promesa.then(result => {
       if (!Category) {
         setProd(result);
         setProductWait(true);
       } else {
-        const categoryProd = productos.filter(
+        const categoryProd = productsDb.filter(
           (prod) => prod.category === Category
         );
         setProd(categoryProd);
         setProductWait(true);
       }
     });
-  }, [Category]);
+  }, [Category, productsDb]);
 
   return productWait ? (
     <div className="container text-center mt-3">
-      <h2>{greeting}</h2>
+      <h2 className="text-info fw-bold">{greeting}</h2>
       <div className="itemList mt-4">
+        <h2 className="text-capitalize text-info fw-bold">{Category}</h2>
         <ItemList items={prod} />
       </div>
     </div>
@@ -44,9 +52,7 @@ export function ItemListContainer({ greeting }) {
       <div
         className="spinner-border"
         style={{ width: "3rem", height: "3rem" }}
-        role="status"
-      >
-        <span className="visually-hidden">Loading...</span>
+        role="status">
       </div>
     </div>
   );

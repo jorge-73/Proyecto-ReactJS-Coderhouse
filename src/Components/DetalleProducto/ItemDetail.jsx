@@ -1,69 +1,39 @@
+import { useContext, useState } from "react";
+import { CartContext } from "../../Contexts/CartContext";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { ItemCount } from "../ItemCount";
 
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+export const ItemDetail = ({ item }) => {
+  const { addProduct } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(0);
 
-const MySwal = withReactContent(Swal);
-
-export const ItemDetail = ({
-  id,
-  description,
-  price,
-  image,
-  title,
-  category,
-}) => {
-  const [count, setCount] = useState(1);
-
-  useEffect(() => {
-    console.log("Sumando Cantidad");
-  }, [count]);
+  const onAdd = (count) => {
+    addProduct(item, count);
+    setQuantity(count);
+  };
 
   return (
-    <div className="card rounded-3 shadow m-3" id={id}>
+    <div className="card rounded-3 shadow m-3" id={item.id}>
       <div className="card-header">
         <img
           className="image img-fluid img-thumbnail rounded-3"
-          src={image}
-          alt={title}
+          src={item.pictureUrl}
+          alt={item.title}
         />
       </div>
       <div className="card-body">
-        <p>{description}</p>
-        <p>{`$${price}`}</p>
+        <p>{item.description}</p>
+        <p>{`$${item.price}`}</p>
       </div>
       <div className="card-footer">
-        <div className="d-flex justify-content-center">
-          <button
-            className="btn btn-secondary"
-            onClick={() => {
-              count === 1 ? setCount(1) : setCount(count - 1);
-            }}
-          >
-            -
-          </button>
-          <span className="m-1 fw-bold fs-5">{count}</span>
-          <button
-            className="btn btn-secondary"
-            onClick={() => {
-              setCount(count + 1);
-            }}
-          >
-            +
-          </button>
-          <button className="btn btn-success mx-1" onClick={() => {
-            MySwal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Producto Agregado al Carrito',
-              showConfirmButton: false,
-              timer: 1500
-            })
-          }}>Agregar al Carrito</button>
-        </div>
+        <ItemCount initial={0} quantity={item.quantity} onAdd={onAdd} />
+        {quantity > 0 && (
+          <Link to="/cart">
+            <button className="btn btn-secondary">Ir al carrito</button>
+          </Link>
+        )}
         <hr />
-        <Link className="btn btn-secondary" to={`/category/${category}`}>
+        <Link className="btn btn-secondary" to={`/category/${item.category}`}>
           volver
         </Link>
       </div>
