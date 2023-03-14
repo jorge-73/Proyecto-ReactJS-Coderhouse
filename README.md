@@ -20,57 +20,35 @@ El proyecto simula un ecommerce de productos Tecnológicos
 ### `ItemListConteiner`
 
 El Proyecto comienza con el Componente ItemListConteiner que esta renderizando el componente ItemList y a su vez este renderiza a el componente Item.
-Estos muestran en formato de Carts hecho con Bootstrap5 los 12 productos que vienen de la base de datos de Firebase/Firestore.
+Estos muestran en formato de Cards hecho con Bootstrap5 los 12 productos que vienen de la base de datos de Firebase/Firestore.
 
-También se muestra un Navbar también diseñado con Bootstrap5 junto con un Icono de presentación de la pagina y otro de un carrito de compras que tiene un icono de 
+También se muestra un Navbar que a su vez esta renderizando el componente CartWidget también diseñado con Bootstrap5 junto con un Icono de presentación de la pagina y otro de un carrito de compras que tiene un icono de 
 FontAwesome que simula un carrito de compras real.
+Además tiene las categorías para filtrar y mostrar solamente los productos que se quiera ver. como Celulares, Smart Tv, Smart Watch, Minicomponentes y Auriculares.
 
-### `npm run build`
+### `ItemDetailConteiner`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Al hacer click en el botón de "detalles" de cualquiera de los productos te lleva al componente de ItemDetailConteiner que este esta renderizando a ItemDetail.
+Aqui también tenemos en forma de card una vista mas detallada pero solamente del producto elegido. con su descripción, cantidad, etc..
+Este esta renderizando el componente ItemCount que tiene las cantidades y un botón para agregar ese producto al carrito de compras con su cantidad seleccionada, 
+y también te habilita un botón para ver los productos que se encuentran en ese momento en el carrito.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `CartContainer`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Adentro del Navbar se encuentra el componente CartConteiner que a su ves esta renderizando a el componente Cart.
+Este se encarga de de mostrar la información de los productos que se encuentrar agregados en el carrito de compras. Estos cada uno tienen un botón con un icono de FontAwesome de para eliminar ese producto del carrito.
+También se muestra la suma total de todos los productos que se van agregando hasta el momento y unos botones de Continuar Compra y Vaciar Carrito que tiene un mensaje de advertencia hecho con "SweetAlert2" si desea seguir con el vaciado del carrito o no.
 
-### `npm run eject`
+### `CheckOut`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Al hacer click en Continuar compra nos dirigimos a el Componente CheckOut. Este como en el carrito muestra una información detallada de los productos añdadidos junto con la suma de todos ellos. Pero agrega un formulario para ingresar los datos del usuario junto con una verificación de el Email escrito.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Al estar todos los datos correctos se guarda la información con el botón "Guardar" y este mostrara un mensaje hecho con "Toastify-js" si la información se guardo correctamente o hubo un error.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Al guardar se habilitara el botón de Finalizar Compra que al presionar muestra un mensaje hecho con "SweetAlert2". Asi se ocultara todo y se mostrara la orden final de la compra con los datos del usuario y el id de la compra traida de la base de datos de "fiestore". Y para terminar también se habilita un botón para regresar a la pantalla principal de la aplicación.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `Información Extra`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Toda los datos de Firebase/Firestore se llama de ItemCollection.js. que a su ves es usado en un componente de Context llamado DataBaseProvider para qaue estos datos puedan usarse en toda la app.
+También cree otro Context para definir todas las funciones que se realizaran en el carrito de compras y demás.
+Y para terminar el NavBar utiliza para ir a las distintas categorías NavLink de react-router-dom.
