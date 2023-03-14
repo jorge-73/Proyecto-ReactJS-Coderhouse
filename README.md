@@ -1,10 +1,20 @@
-# Getting Started with Create React App
+# Proyecto Final CoderHouse - Peralta Jorge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto simula un ecommerce de productos Tecnológicos
 
-## Available Scripts
+## Dependencias Utilizadas
 
-In the project directory, you can run:
+```
+"@fortawesome/fontawesome-svg-core": "^6.2.1"
+ "@fortawesome/free-solid-svg-icons": "^6.2.1"
+ "@fortawesome/react-fontawesome": "^0.2.0"
+ "bootstrap": "^5.3.0-alpha1"
+ "bootswatch": "^5.2.3"
+ "firebase": "^9.17.1"
+ "react-router-dom": "^6.8.0"
+ "sweetalert2": "^11.7.1"
+ "toastify-js": "^1.12.0"
+```
 
 ### `npm start`
 
