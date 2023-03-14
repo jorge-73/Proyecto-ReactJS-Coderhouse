@@ -7,7 +7,6 @@ El proyecto simula un ecommerce de productos Tecnológicos
 ```
 "@fortawesome/fontawesome-svg-core": "^6.2.1"
  "@fortawesome/free-solid-svg-icons": "^6.2.1"
- "@fortawesome/react-fontawesome": "^0.2.0"
  "bootstrap": "^5.3.0-alpha1"
  "bootswatch": "^5.2.3"
  "firebase": "^9.17.1"
@@ -16,18 +15,15 @@ El proyecto simula un ecommerce de productos Tecnológicos
  "toastify-js": "^1.12.0"
 ```
 
-### `npm start`
+## `Descripción del Proyecto`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `ItemListConteiner`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+El Proyecto comienza con el Componente ItemListConteiner que esta renderizando el componente ItemList y a su vez este renderiza a el componente Item.
+Estos muestran en formato de Carts hecho con Bootstrap5 los 12 productos que vienen de la base de datos de Firebase/Firestore.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+También se muestra un Navbar también diseñado con Bootstrap5 junto con un Icono de presentación de la pagina y otro de un carrito de compras que tiene un icono de 
+FontAwesome que simula un carrito de compras real.
 
 ### `npm run build`
 
