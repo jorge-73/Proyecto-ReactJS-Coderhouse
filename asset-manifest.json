@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jorge-73/Proyecto-ReactJS-Coderhouse/static/css/main.4aaaae9b.css",
+    "main.js": "/jorge-73/Proyecto-ReactJS-Coderhouse/static/js/main.3d9a7a21.js",
+    "index.html": "/jorge-73/Proyecto-ReactJS-Coderhouse/index.html",
+    "main.4aaaae9b.css.map": "/jorge-73/Proyecto-ReactJS-Coderhouse/static/css/main.4aaaae9b.css.map",
+    "main.3d9a7a21.js.map": "/jorge-73/Proyecto-ReactJS-Coderhouse/static/js/main.3d9a7a21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4aaaae9b.css",
+    "static/js/main.3d9a7a21.js"
+  ]
+}
