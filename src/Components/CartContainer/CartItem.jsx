@@ -36,6 +36,7 @@ export const CartItem = ({ item }) => {
           <button
             className="btn btn-danger"
             onClick={() => {
+              console.log(item.id);
               removeProduct(item.id);
               Toastify({
                 text: "Producto Eliminado.!",

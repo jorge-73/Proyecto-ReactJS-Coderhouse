@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
 
     const copyArray = [...productCartList];
     const newArray = copyArray.filter((elm) => elm.id !== idProduct);
-    productCartList(newArray);
+    setProductCartList(newArray);
   };
 
   const clearProductCartList = () => {

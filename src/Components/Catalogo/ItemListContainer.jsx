@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 export function ItemListContainer({ greeting }) {
 
-  const {productsDb} = useContext(DataBaseContext);
+  const { productsDb } = useContext(DataBaseContext);
 
   const [prod, setProd] = useState([]);
   const [productWait, setProductWait] = useState(false);
